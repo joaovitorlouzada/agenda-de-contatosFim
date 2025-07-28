@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📒 Agenda de Contatos
 
-## Getting Started
+Aplicação web para gerenciamento de contatos desenvolvida com *Next.js 14 (App Router), **TypeScript* e *Tailwind CSS*.  
+A persistência de dados é feita com *Supabase (PostgreSQL), e o deploy foi realizado na **Vercel*.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tecnologias Utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- *Next.js 14.2.7 (App Router)* – Framework React com renderização híbrida (SSR e SSG).
+- *TypeScript* – Tipagem estática para maior segurança no código.
+- *Tailwind CSS* – Framework de estilos utilitários para criação rápida de layouts.
+- *Supabase* – Banco de dados PostgreSQL com APIs prontas e autenticação.
+- *Vercel* – Plataforma de hospedagem otimizada para projetos Next.js.
+- *Lucide-react* – Ícones leves e modernos.
+- *ESLint* – Análise estática do código para boas práticas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📦 Funcionalidades
 
-## Learn More
+- *CRUD Completo*: Listar, criar, editar e excluir contatos.
+- *Validação de Formulários*:  
+  - Nome: apenas letras e espaços.  
+  - E-mail: formato válido.  
+  - Telefone: apenas números (8 a 15 dígitos).  
+- *Interface responsiva* baseada no design do [Figma](https://www.figma.com/community/file/1408455704705137276/mini-projeto-siga-seu-atleta-app-next-js-fullstack).
+- *Navbar minimalista* com tooltip "Sobre".
+- *Integração com Supabase* para persistência real.
+- *Deploy automático via Vercel*.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Como Rodar Localmente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### *Pré-requisitos*
+- *Node.js 18+* (versão LTS recomendada)
+- *npm* ou *yarn*
+- Conta no [Supabase](https://supabase.com/) (para configurar suas variáveis de ambiente).
 
-## Deploy on Vercel
+### *Passos*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. *Clone o repositório:*
+   bash
+   git clone https://github.com/SEU-USUARIO/agenda-de-contatos.git
+   cd agenda-de-contatos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. **Instale as dependências:**
+   bash
+   npm install
+
+3. *Configure as variáveis de ambiente:*
+   bash
+   NEXT_PUBLIC_SUPABASE_URL=https://SEU-PROJECT-URL.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=SUA-CHAVE-ANON
+
+4. **Inicie o servidor local:**
+   bash
+   npm run dev
+O projeto estará disponível em http://localhost:3000.
+
+## 🌐 Deploy
+
+A aplicação está hospedada na Vercel.
+Link de acesso: https://agenda-de-contatos-jet-ten.vercel.app/
+
+Processo de deploy:
+
+Código versionado no GitHub.
+
+Integração direta do repositório com a Vercel.
+
+Build automático com next build e deploy contínuo a cada push.
+
+## 📁 Estrutura de Pastas
+
+```plaintext
+app
+ ├─ page.tsx                 # Página inicial (lista de contatos)
+ └─ contato
+     ├─ novo
+     │   └─ page.tsx         # Página para criar contato
+     ├─ [id]
+     │   └─ page.tsx         # Página de detalhes do contato
+     └─ [id]
+         └─ editar
+             └─ page.tsx     # Página para editar contato
+components
+ ├─ Navbar.tsx               # Navbar minimalista
+ └─ BackButton.tsx           # Botão de voltar
+lib
+ ├─ contatos.ts              # CRUD integrado ao Supabase
+ └─ supabaseClient.ts        # Configuração do cliente Supabase
