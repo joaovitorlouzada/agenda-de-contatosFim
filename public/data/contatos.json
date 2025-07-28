@@ -1,0 +1,20 @@
+[
+  {
+    "id": "5f724d8b-c867-4293-8997-5f7ce754c9f5",
+    "nome": "João Vítor Louzada",
+    "email": "joao@gmail.com",
+    "telefone": "31983761019"
+  },
+  {
+    "id": "8cb90dd3-a37f-422a-96f4-0db3a7153fc9",
+    "nome": "Everton",
+    "email": "everton@gmail.com",
+    "telefone": "21979786567"
+  },
+  {
+    "id": "7d2e2107-d767-4af9-9d0f-fe3997ed4318",
+    "nome": "Claúdia",
+    "email": "claudia@gmail.com",
+    "telefone": "64983887232"
+  }
+]
